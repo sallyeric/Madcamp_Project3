@@ -26,19 +26,20 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
     int slotCount = 15;
 
+    public List<Item> selectedItems = new List<Item>();
+
     // 아이템 추가할 때 마다
     // 슬롯 UI에도 추가하기 위한 대리자(delegate).
-    public delegate void OnChangeItem();
+    public delegate void OnChangeItem(int itemNum);
     public OnChangeItem onChangeItem;
 
     // 슬롯에 빈공간 있으면 아이템 추가
     public bool AddItem(Item _item)
     {
-        Debug.Log(items.Count +" < " + slotCount);
         if (items.Count < slotCount)
         {
             items.Add(_item);
-            if (onChangeItem != null) onChangeItem.Invoke();
+            if (onChangeItem != null) onChangeItem.Invoke(items.Count);
             return true;
         }
         return false;
@@ -47,7 +48,6 @@ public class Inventory : MonoBehaviour
     // Field Item과 충돌한 상태에서 스페이스바로 획득하기
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("OnTriggerStay2D");
         if (Input.GetKey(KeyCode.W))
         {
             if (collision.CompareTag("FieldItem"))

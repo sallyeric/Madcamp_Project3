@@ -24,10 +24,9 @@ public class InventoryUI : MonoBehaviour
         inventoryPanel.SetActive(activeInventory);
         slots = slotHolder.GetComponentsInChildren<Slot>();     // slotHolder 안에 있는 slot item들 추출
 
-        Debug.Log("slot length: " + slots.Length);
-
         inventory = Inventory.instance;
         inventory.onChangeItem += RedrawSlotUI;
+        inventory.onChangeItem += SlotChange;
     }
 
     void Update()
@@ -39,7 +38,6 @@ public class InventoryUI : MonoBehaviour
             inventoryPanel.SetActive(activeInventory);
         }
     }
-
 
     /* 아이템 갯수만큼 슬롯 활성화하기 */ 
     private void SlotChange(int itemNum)
@@ -54,7 +52,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    void RedrawSlotUI()
+    void RedrawSlotUI(int itemNum)
     {
         // 모든 슬롯 삭제
         for(int i=0; i<slots.Length; i++)

@@ -57,7 +57,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetButtonDown("Jump") && animator.GetBool("isGround"))
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-            //animator.SetBool("", true);
+            animator.SetBool("isGround", false);
         }
     }
 
@@ -71,18 +71,27 @@ public class PlayerMove : MonoBehaviour
         /* 걷기: 속도 제한 */
         if (Mathf.Abs(rigid.velocity.x) > maxSpeed)
             rigid.velocity = new Vector2(maxSpeed * axisRaw, rigid.velocity.y);
+
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        /* 바닥에 닿으면 점프 애니메이션 종료 */
         if(collision.gameObject.layer == 8)
-            animator.SetBool("isGround", true);
+        {
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                if((contact.point.y - transform.position.y) < -0.7f)
+                {
+                    animator.SetBool("isGround", true);
+                }
+            }
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        /* 바닥에서 떨어지면 점프 애니메이션 */
+        /* 바닥에서 떨어질 때 */
         if (collision.gameObject.layer == 8)
             animator.SetBool("isGround", false);
     }

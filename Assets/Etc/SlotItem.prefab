@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3875960667999440378}
   - component: {fileID: 7405055067876412777}
   - component: {fileID: 6501465728217190338}
+  - component: {fileID: 555714933237778915}
   m_Layer: 5
   m_Name: SlotItem
   m_TagString: Untagged
@@ -90,6 +91,24 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &555714933237778915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2637767493074818389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 529dccdf51d6e474fba61373b1d92e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    itemType: 0
+    itemName: 
+    itemImage: {fileID: 0}
+  itemIcon: {fileID: 1910133277895318646}
+  itemName: {fileID: 2913722562743175342}
 --- !u!1 &6816335907169338529
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +186,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uAE30"
+  m_Text: 
 --- !u!1 &8616333185957648255
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b212ac0a5d074d64c87e1ec0aaedc9ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08b541e1294a0a04a8c12ffabc72cdc2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

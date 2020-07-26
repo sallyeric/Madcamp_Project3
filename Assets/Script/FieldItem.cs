@@ -5,11 +5,16 @@ using UnityEngine;
 
 // 필드에 놓여진 아이템
 
+
 public class FieldItem : MonoBehaviour
 {
     public Item item;               // 어떤 아이템인가
     public SpriteRenderer image;    // 아이템에 맞는 이미지
 
+    private void Awake()
+    {
+        image.sprite = item.itemImage;
+    }
     public void SetItem(Item _item)
     {
         item.itemType = _item.itemType;

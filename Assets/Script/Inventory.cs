@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Inventory
+ * 실제 지니고 있는 인벤토리 속 아이템 데이터를
+ * 저장하는 클래스.
+ */
+
 public class Inventory : MonoBehaviour
 {
     #region Singleton
@@ -17,32 +22,23 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
-    
+    // 실제 갖고 있는 아이템들.
     public List<Item> items = new List<Item>();
+    int slotCount = 15;
 
-    // 슬롯 개수가 변경됨을 알려주기 위한 대리자(delegate)
-    public delegate void OnSlotCountChange(int itemCount);
-    public OnSlotCountChange onSlotCountChange;
-
-    // 아이템 추가시 슬롯 UI에도 추가하기 위한 대리자
-    //public delegate void OnChangeItem();
-    //public OnChangeItem onChangeItem;
-
-    public int slotCount;           // slot 최대 갯수
-
-    void Start()
-    {
-        slotCount = 15;
-    }
+    // 아이템 추가할 때 마다
+    // 슬롯 UI에도 추가하기 위한 대리자(delegate).
+    public delegate void OnChangeItem();
+    public OnChangeItem onChangeItem;
 
     // 슬롯에 빈공간 있으면 아이템 추가
     public bool AddItem(Item _item)
     {
-        if(items.Count < slotCount)
+        Debug.Log(items.Count +" < " + slotCount);
+        if (items.Count < slotCount)
         {
             items.Add(_item);
-            //if (onChangeItem != null)
-            //    onChangeItem.Invoke();
+            if (onChangeItem != null) onChangeItem.Invoke();
             return true;
         }
         return false;
@@ -51,7 +47,8 @@ public class Inventory : MonoBehaviour
     // Field Item과 충돌한 상태에서 스페이스바로 획득하기
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        Debug.Log("OnTriggerStay2D");
+        if (Input.GetKey(KeyCode.W))
         {
             if (collision.CompareTag("FieldItem"))
             {

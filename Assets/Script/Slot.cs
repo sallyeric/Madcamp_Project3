@@ -7,6 +7,7 @@ public class Slot : MonoBehaviour
 {
     public Item item;
     public Image itemIcon;
+    public Text itemName;
 
     // 아이템이 추가/교체된 경우
     // 슬롯 UI를 업데이트 한다.
@@ -14,6 +15,7 @@ public class Slot : MonoBehaviour
     {
         itemIcon.sprite = item.itemImage;
         itemIcon.gameObject.SetActive(true);
+        itemName.text = item.itemName;
     }
 
     // 아이템이 삭제된 경우

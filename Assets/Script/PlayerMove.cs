@@ -8,17 +8,23 @@ public class PlayerMove : MonoBehaviour
 {
     public float maxSpeed;                      // 최대 속력
     public float jumpPower;                     // 점프력
+    public GameObject stuff;
 
     Rigidbody2D rigid;                          // player
     SpriteRenderer spriteRenderer;              // player의 Flip을 위해
     bool facingRight = true;
     Animator animator;
+    SpriteRenderer stuffRenderer;
+
+    string stuffName;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        stuffRenderer = stuff.GetComponent<SpriteRenderer>();
+        stuffName = "";
     }
 
     // Update is called once per frame
@@ -94,5 +100,24 @@ public class PlayerMove : MonoBehaviour
         /* 바닥에서 떨어질 때 */
         if (collision.gameObject.layer == 8)
             animator.SetBool("isGround", false);
+    }
+
+    public void RaiseStuff(string _stuffName)
+    {
+        stuffName = _stuffName;
+        string path = "Stuffs/" + _stuffName;
+
+        stuffRenderer.sprite = Resources.Load(path, typeof(Sprite)) as Sprite;
+        stuff.SetActive(true);
+
+        animator.SetBool("isStuff", true);
+    }
+
+    public void PutDownStuff()
+    {
+        stuffName = "";
+        stuff.SetActive(false);
+
+        animator.SetBool("isStuff", false);
     }
 }

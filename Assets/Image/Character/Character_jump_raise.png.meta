@@ -1,25 +1,13 @@
 fileFormatVersion: 2
-guid: f525971fe4bca85408261f002eed7ee7
+guid: 56d23d8f789610743a3f1c62966f97ed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7032272184540552291
-    second: Character_walk_0
+      213: 1094287355800266395
+    second: Character_jump_raise_0
   - first:
-      213: -1708044731432129544
-    second: Character_walk_1
-  - first:
-      213: -8280258240042396419
-    second: Character_walk_2
-  - first:
-      213: -2590793142252517949
-    second: Character_walk_3
-  - first:
-      213: 7819774555939384827
-    second: Character_walk_4
-  - first:
-      213: -1581312953850513542
-    second: Character_walk_5
+      213: 2481869051386268036
+    second: Character_jump_raise_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -129,11 +117,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character_walk_0
+      name: Character_jump_raise_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 6
+        y: 12
         width: 108
         height: 150
       alignment: 0
@@ -143,18 +131,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d93a99ce4b9586e90800000000000000
-      internalID: -7032272184540552291
+      spriteID: b962da46d80bf2f00800000000000000
+      internalID: 1094287355800266395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_walk_1
+      name: Character_jump_raise_1
       rect:
         serializedVersion: 2
         x: 111
-        y: 6
+        y: 12
         width: 108
         height: 150
       alignment: 0
@@ -164,92 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fba28acd5ecb48e0800000000000000
-      internalID: -1708044731432129544
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_walk_2
-      rect:
-        serializedVersion: 2
-        x: 222
-        y: 6
-        width: 108
-        height: 150
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df495c9500d961d80800000000000000
-      internalID: -8280258240042396419
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_walk_3
-      rect:
-        serializedVersion: 2
-        x: 333
-        y: 6
-        width: 108
-        height: 150
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c5458d1d57ab0cd0800000000000000
-      internalID: -2590793142252517949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_walk_4
-      rect:
-        serializedVersion: 2
-        x: 444
-        y: 6
-        width: 108
-        height: 150
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfda766178b658c60800000000000000
-      internalID: 7819774555939384827
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_walk_5
-      rect:
-        serializedVersion: 2
-        x: 555
-        y: 6
-        width: 108
-        height: 150
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7734032f3c0e0ae0800000000000000
-      internalID: -1581312953850513542
+      spriteID: 4890ae2b0ce517220800000000000000
+      internalID: 2481869051386268036
       vertices: []
       indices: 
       edges: []

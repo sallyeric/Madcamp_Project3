@@ -120,12 +120,12 @@ TextureImporter:
       name: Character_jump_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 0
         y: 12
-        width: 102
+        width: 108
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,12 +141,12 @@ TextureImporter:
       name: Character_jump_1
       rect:
         serializedVersion: 2
-        x: 117
+        x: 111
         y: 12
-        width: 102
+        width: 108
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

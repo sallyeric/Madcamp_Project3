@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class WorkingSpace : MonoBehaviour
@@ -18,18 +20,17 @@ public class WorkingSpace : MonoBehaviour
     #endregion
 
     public GameObject workingSpacePanel;       // inventory 창
-    bool activeWorkingSpace = false;            // 켜기/닫기 위한 bool
-
-    Inventory inventory;
 
     public Slot[] slots;                    // 인벤토리의 슬롯 리스트. (아이템이 아니라 슬롯!)
     public Transform slotHolder;            // slot들을 갖고 있는 놈. slotsParent.
+    public PlayerMove player;
 
     public List<Item> selectedItems = new List<Item>();
 
+    string[] stuffsList = {"구두", "풍선"};
+
     void Start()
     {
-        inventory = Inventory.instance;
         slots = slotHolder.GetComponentsInChildren<Slot>();
     }
 
@@ -40,6 +41,10 @@ public class WorkingSpace : MonoBehaviour
         {
             selectedItems.Add(_item);
             UpdateSpace();
+
+            if (selectedItems.Count == 2)
+                MakeStuff();
+
             return true;
         }
         return false;
@@ -49,6 +54,7 @@ public class WorkingSpace : MonoBehaviour
     {
         selectedItems.Remove(_item);
         UpdateSpace();
+        player.PutDownStuff();
     }
     void UpdateSpace()
     {
@@ -77,6 +83,22 @@ public class WorkingSpace : MonoBehaviour
         {
             slots[i].item = selectedItems[i];
             slots[i].UpdateSlotUI();
+        }
+    }
+
+    void MakeStuff()
+    {
+        string stuffName = slots[0].item.itemName.ToString() + slots[1].item.itemName.ToString();
+        Debug.Log("stuffName: " + stuffName);
+
+        if (stuffsList.Contains(stuffName))
+        {
+            Debug.Log("존재하는 stuff!");
+            player.RaiseStuff(stuffName);
+        } 
+        else
+        {
+            Debug.Log("존재하지 않습니다.");
         }
     }
 }

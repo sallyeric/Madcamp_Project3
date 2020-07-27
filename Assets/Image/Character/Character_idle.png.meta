@@ -129,12 +129,12 @@ TextureImporter:
       name: Character_idle_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 0
         y: 6
-        width: 102
+        width: 108
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -150,12 +150,12 @@ TextureImporter:
       name: Character_idle_1
       rect:
         serializedVersion: 2
-        x: 117
+        x: 111
         y: 6
-        width: 102
+        width: 108
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,12 +171,12 @@ TextureImporter:
       name: Character_idle_2
       rect:
         serializedVersion: 2
-        x: 228
+        x: 222
         y: 6
-        width: 102
+        width: 108
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -192,12 +192,12 @@ TextureImporter:
       name: Character_idle_3
       rect:
         serializedVersion: 2
-        x: 339
+        x: 333
         y: 6
-        width: 102
+        width: 108
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,12 +213,12 @@ TextureImporter:
       name: Character_idle_4
       rect:
         serializedVersion: 2
-        x: 450
+        x: 444
         y: 6
-        width: 102
+        width: 108
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

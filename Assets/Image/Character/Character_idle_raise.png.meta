@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: f525971fe4bca85408261f002eed7ee7
+guid: 41d5dc94295df314d8d837e0a149e095
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7032272184540552291
-    second: Character_walk_0
+      213: 3418960262075726037
+    second: Character_idle_raise_0
   - first:
-      213: -1708044731432129544
-    second: Character_walk_1
+      213: 8763005493017661954
+    second: Character_idle_raise_1
   - first:
-      213: -8280258240042396419
-    second: Character_walk_2
+      213: -6086942627543937448
+    second: Character_idle_raise_2
   - first:
-      213: -2590793142252517949
-    second: Character_walk_3
+      213: -3981761466759026043
+    second: Character_idle_raise_3
   - first:
-      213: 7819774555939384827
-    second: Character_walk_4
-  - first:
-      213: -1581312953850513542
-    second: Character_walk_5
+      213: -6489734075882576335
+    second: Character_idle_raise_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -129,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character_walk_0
+      name: Character_idle_raise_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d93a99ce4b9586e90800000000000000
-      internalID: -7032272184540552291
+      spriteID: 5d833327e36927f20800000000000000
+      internalID: 3418960262075726037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_walk_1
+      name: Character_idle_raise_1
       rect:
         serializedVersion: 2
         x: 111
@@ -164,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fba28acd5ecb48e0800000000000000
-      internalID: -1708044731432129544
+      spriteID: 2025d1841137c9970800000000000000
+      internalID: 8763005493017661954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_walk_2
+      name: Character_idle_raise_2
       rect:
         serializedVersion: 2
         x: 222
@@ -185,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df495c9500d961d80800000000000000
-      internalID: -8280258240042396419
+      spriteID: 85e8f052ee5d68ba0800000000000000
+      internalID: -6086942627543937448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_walk_3
+      name: Character_idle_raise_3
       rect:
         serializedVersion: 2
         x: 333
@@ -206,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c5458d1d57ab0cd0800000000000000
-      internalID: -2590793142252517949
+      spriteID: 58a6d71da01fdb8c0800000000000000
+      internalID: -3981761466759026043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_walk_4
+      name: Character_idle_raise_4
       rect:
         serializedVersion: 2
         x: 444
@@ -227,29 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfda766178b658c60800000000000000
-      internalID: 7819774555939384827
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_walk_5
-      rect:
-        serializedVersion: 2
-        x: 555
-        y: 6
-        width: 108
-        height: 150
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7734032f3c0e0ae0800000000000000
-      internalID: -1581312953850513542
+      spriteID: 1366548fd35dfe5a0800000000000000
+      internalID: -6489734075882576335
       vertices: []
       indices: 
       edges: []

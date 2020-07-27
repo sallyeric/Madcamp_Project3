@@ -9,14 +9,20 @@ public class PlayerMove : MonoBehaviour
     public float maxSpeed;                      // 최대 속력
     public float jumpPower;                     // 점프력
     public GameObject stuff;
+    public GameManager manager;
+    public ItemManager itemManager;
 
     Rigidbody2D rigid;                          // player
     SpriteRenderer spriteRenderer;              // player의 Flip을 위해
     bool facingRight = true;
     Animator animator;
-    SpriteRenderer stuffRenderer;
+    public SpriteRenderer stuffRenderer;
 
-    string stuffName;
+    public static string stuffName;
+    Vector2 startPosition;
+
+    GameObject scanObject;
+    RaycastHit2D rayHit;
 
     void Awake()
     {
@@ -24,12 +30,23 @@ public class PlayerMove : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         stuffRenderer = stuff.GetComponent<SpriteRenderer>();
-        stuffName = "";
+        stuffName = null;
+        startPosition = rigid.transform.position;
+        stuff.SetActive(false);
+    }
+
+    private void Start()
+    {
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log(rigid.position);
+
+
         /* 얼굴 방향 바꾸기 */
         if (Input.GetButton("Horizontal"))
         {
@@ -65,6 +82,28 @@ public class PlayerMove : MonoBehaviour
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             animator.SetBool("isGround", false);
         }
+
+        // Scan Object
+        if (Input.GetKeyDown("w") && scanObject != null)
+        {  
+            // w키를 누르고, 스캔오브젝트가 널이 아니면 manager의 Action함수 실행
+            Debug.Log("W누름: " + scanObject.name);
+            manager.Action(scanObject);
+
+            // 말풍선 떠있으면 Freeze
+            if (manager.isActive)
+                rigid.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+            else
+            {
+                // 대화가 끝나고 아이템 얻기
+                rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+                Item newItem = itemManager.GetWordItem(scanObject.GetComponent<ObjectData>().id);
+                if (newItem != null){
+                    Debug.Log("get newItem: " + newItem.itemName);
+                    rigid.GetComponent<Inventory>().AddItem(newItem);
+                }
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -78,6 +117,19 @@ public class PlayerMove : MonoBehaviour
         if (Mathf.Abs(rigid.velocity.x) > maxSpeed)
             rigid.velocity = new Vector2(maxSpeed * axisRaw, rigid.velocity.y);
 
+        /* Ray */
+        // Start에 만들면 안됨
+        Debug.DrawRay(new Vector2(rigid.position.x - 0.1f, rigid.position.y), Vector2.right * 0.2f, new Color(0, 1, 0));    // 레이져를 그려준다
+        rayHit = Physics2D.Raycast(new Vector2(rigid.position.x - 0.1f, rigid.position.y), Vector2.right, 0.2f, LayerMask.GetMask("Object"));                       // Object라는 레이어에 보인것들만 됨
+
+        /* rayHit 충돌 확인 */
+        if (rayHit.collider != null)
+        {
+            scanObject = rayHit.collider.gameObject;
+            //Debug.Log(scanObject.name);
+        }
+        else
+            scanObject = null;
         
     }
 
@@ -107,15 +159,38 @@ public class PlayerMove : MonoBehaviour
         stuffName = _stuffName;
         string path = "Stuffs/" + _stuffName;
 
-        stuffRenderer.sprite = Resources.Load(path, typeof(Sprite)) as Sprite;
+        Sprite sprite = (Sprite) Resources.Load(path, typeof(Sprite));
+
+        Debug.Log("stuff: " + stuffRenderer.gameObject.name);
+
         stuff.SetActive(true);
+        stuffRenderer.sprite = Resources.Load(path, typeof(Sprite)) as Sprite;
 
         animator.SetBool("isStuff", true);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "GameOver")
+            PlayerReposition(startPosition);
+    }
+
+    public void PlayerReposition(Vector2 position)
+    {
+        rigid.velocity = Vector2.zero;
+        rigid.transform.position = position;
+
+        if (!facingRight)
+        {
+            spriteRenderer.flipX = !spriteRenderer.flipX;
+            facingRight = true;
+        }
+
+    }
+
     public void PutDownStuff()
     {
-        stuffName = "";
+        stuffName = null;
         stuff.SetActive(false);
 
         animator.SetBool("isStuff", false);

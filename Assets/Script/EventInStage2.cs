@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class StuffEvent : MonoBehaviour
+public class StuffEvent2 : MonoBehaviour
 {
     public Rigidbody2D rigid;
     public GameObject ChatBox;

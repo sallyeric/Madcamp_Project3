@@ -27,11 +27,14 @@ public class WorkingSpace : MonoBehaviour
 
     public List<Item> selectedItems = new List<Item>();
 
-    string[] stuffsList = {"구두", "풍선"};
+    string[] stuffsList = {"분필", "열쇠", "간식", "날개", "필통", "간장", "간판"};
+
+    bool isStuff;
 
     void Start()
     {
         slots = slotHolder.GetComponentsInChildren<Slot>();
+        isStuff = false;
     }
 
     public bool SelectItem(Item _item)
@@ -52,9 +55,14 @@ public class WorkingSpace : MonoBehaviour
 
     public void UnselectItem(Item _item)
     {
+        if (selectedItems.Count == 2 && isStuff)
+        {
+            player.PutDownStuff();
+            isStuff = false;
+        }
+
         selectedItems.Remove(_item);
         UpdateSpace();
-        player.PutDownStuff();
     }
     void UpdateSpace()
     {
@@ -95,6 +103,7 @@ public class WorkingSpace : MonoBehaviour
         {
             Debug.Log("존재하는 stuff!");
             player.RaiseStuff(stuffName);
+            isStuff = true;
         } 
         else
         {

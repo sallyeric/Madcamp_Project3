@@ -19,7 +19,11 @@ public class Central : MonoBehaviour
     {
         inventory = Inventory.instance;
 
+        Debug.Log(transform.name);
+
         Transform slotsParent = transform.GetComponentInChildren<HorizontalLayoutGroup>().transform;
+
+        Debug.Log("slotsParent name: " + slotsParent.name);
 
         slots = new List<Transform>();
 

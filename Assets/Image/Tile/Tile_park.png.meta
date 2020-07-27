@@ -11,6 +11,18 @@ TextureImporter:
   - first:
       213: 358399751344940976
     second: Tile_park_2
+  - first:
+      213: 1401383765717926704
+    second: Tile_park_0
+  - first:
+      213: 3617964204250032911
+    second: Tile_park_1
+  - first:
+      213: -5701344033437495243
+    second: Tile_park_2
+  - first:
+      213: 7982844263585289727
+    second: Tile_park_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -128,14 +140,14 @@ TextureImporter:
         width: 99
         height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1f33689a6e8d7f00800000000000000
-      internalID: 1116204871132069661
+      spriteID: 033cd9d2c17b27310800000000000000
+      internalID: 1401383765717926704
       vertices: []
       indices: 
       edges: []
@@ -144,19 +156,19 @@ TextureImporter:
       name: Tile_park_1
       rect:
         serializedVersion: 2
-        x: 123
+        x: 117
         y: 9
         width: 99
         height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f307783d7836f0d0800000000000000
-      internalID: -3389459559080328207
+      spriteID: f0be6646647953230800000000000000
+      internalID: 3617964204250032911
       vertices: []
       indices: 
       edges: []
@@ -165,19 +177,40 @@ TextureImporter:
       name: Tile_park_2
       rect:
         serializedVersion: 2
-        x: 237
+        x: 225
         y: 9
         width: 99
         height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b7e08accaa49f400800000000000000
-      internalID: 358399751344940976
+      spriteID: 5305aa00fc1c0e0b0800000000000000
+      internalID: -5701344033437495243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_park_3
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 9
+        width: 99
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff514441092c8ce60800000000000000
+      internalID: 7982844263585289727
       vertices: []
       indices: 
       edges: []

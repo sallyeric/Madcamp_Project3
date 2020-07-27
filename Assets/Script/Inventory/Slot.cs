@@ -15,6 +15,7 @@ public class Slot : MonoBehaviour, IPointerUpHandler
 
     void Start()
     {
+        item = null;
         workingSpace = WorkingSpace.instance;
         isSelected = false;
     }
@@ -41,6 +42,12 @@ public class Slot : MonoBehaviour, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         Debug.Log("Slot/OnPointerUp");
+
+        if (item == null)
+            return;
+
+        Debug.Log("item != null");
+
         if (!isSelected)
         {
             if (workingSpace.SelectItem(item))

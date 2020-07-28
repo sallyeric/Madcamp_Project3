@@ -24,6 +24,10 @@ public class PlayerMove : MonoBehaviour
     GameObject scanObject;
     RaycastHit2D rayHit;
 
+    string TAG = "PlayerMove/";
+
+    bool isLadder;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -33,6 +37,8 @@ public class PlayerMove : MonoBehaviour
         stuffName = null;
         startPosition = rigid.transform.position;
         stuff.SetActive(false);
+
+        isLadder = false;
     }
 
     private void Start()
@@ -44,7 +50,7 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(rigid.position);
+        //Debug.Log(TAG + "Update: " + rigid.position);
 
 
         /* 얼굴 방향 바꾸기 */
@@ -126,10 +132,20 @@ public class PlayerMove : MonoBehaviour
         if (rayHit.collider != null)
         {
             scanObject = rayHit.collider.gameObject;
-            //Debug.Log(scanObject.name);
+            Debug.Log("Ray 맞은 물건: "+scanObject.name);
         }
         else
             scanObject = null;
+
+        /* 계단 타기 */
+        if (isLadder)
+        {
+            float ver = Input.GetAxis("Vertical");
+            rigid.gravityScale = 0;
+            rigid.velocity = new Vector2(rigid.velocity.x, ver * maxSpeed);
+        }
+        else
+            rigid.gravityScale = 3f;
         
     }
 
@@ -173,6 +189,17 @@ public class PlayerMove : MonoBehaviour
     {
         if(collision.gameObject.tag == "GameOver")
             PlayerReposition(startPosition);
+
+        /* 계단 입장 */
+        if (collision.gameObject.name == "계단")
+            isLadder = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        /* 계단 나가기 */
+        if (collision.gameObject.name == "계단")
+            isLadder = false;
     }
 
     public void PlayerReposition(Vector2 position)

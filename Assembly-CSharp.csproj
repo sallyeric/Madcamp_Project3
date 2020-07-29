@@ -78,6 +78,7 @@
     <Compile Include="Assets\Script\NumberSystem.cs" />
     <Compile Include="Assets\Script\ObjectData.cs" />
     <Compile Include="Assets\Script\PlayerMove.cs" />
+    <Compile Include="Assets\Script\SceneChange.cs" />
     <Compile Include="Assets\Script\TalkManager.cs" />
     <Compile Include="Assets\Script\Test.cs" />
     <Compile Include="Assets\Script\WorkingSpace.cs" />

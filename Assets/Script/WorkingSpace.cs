@@ -27,8 +27,8 @@ public class WorkingSpace : MonoBehaviour
 
     public List<Item> selectedItems = new List<Item>();
 
-    string[] stuffsList = {"분필", "열쇠", "간식", "날개", "필통", "간장", "간판",
-                            "장작", "우산", "가위", "편지", "성냥", "위성", "장미"};
+    string[] stuffsList = {"분필", "열쇠", "간식", "날개", "필통", "간장", "간판", "분식", "사장",
+                            "장작", "우산", "가위", "편지", "성냥", "위성", "장미", "작물", "꽃병", "물병", "지장", "가지", "물감"};
 
     bool isStuff;
 

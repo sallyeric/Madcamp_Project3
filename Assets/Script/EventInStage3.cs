@@ -17,6 +17,8 @@ public class EventInStage3 : MonoBehaviour
 
     public GameObject Portal_cancel;
 
+    public GameObject FinishScreen;
+
     // 자물쇠 관련
     public NumberSystem TheNumber;
     public string correctNumber;
@@ -184,6 +186,8 @@ public class EventInStage3 : MonoBehaviour
                         Debug.Log("get newItem: " + newItem.itemName);
                         rigid.GetComponent<Inventory>().AddItem(newItem);
                     }
+
+                    collision.gameObject.SetActive(false);
                 }
 
             }
@@ -196,6 +200,33 @@ public class EventInStage3 : MonoBehaviour
             {
                 Debug.Log("Finish!");
                 Time.timeScale = 0;
+
+                FinishScreen.SetActive(true);
+            }
+        }
+
+        if (collision.gameObject.name == "편지함" && Input.GetKeyDown(KeyCode.W))
+        {
+            Debug.Log(TAG + "편지함");
+
+            if (PlayerMove.stuffName == "가위")
+            {
+                manager.Action(collision.gameObject);
+
+                if (manager.isActive)
+                    rigid.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+                else
+                {
+                    // 대화 끝
+                    rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+                    Item newItem = itemManager.GetWordItem(collision.gameObject.GetComponent<ObjectData>().id);
+                    if (newItem != null)
+                    {
+                        Debug.Log("get newItem: " + newItem.itemName);
+                        rigid.GetComponent<Inventory>().AddItem(newItem);
+                    }
+                }
+
             }
         }
     }

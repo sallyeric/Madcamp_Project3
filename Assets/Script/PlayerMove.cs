@@ -187,9 +187,6 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "GameOver")
-            PlayerReposition(startPosition);
-
         /* 계단 입장 */
         if (collision.gameObject.name == "계단")
             isLadder = true;

@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\CameraSetting.cs" />
     <Compile Include="Assets\Script\EventInStage1.cs" />
     <Compile Include="Assets\Script\EventInStage2.cs" />
     <Compile Include="Assets\Script\EventInStage3.cs" />

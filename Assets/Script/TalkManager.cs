@@ -29,8 +29,10 @@ public class TalkManager : MonoBehaviour
         talkData.Add(204, new string[] { "옥혜와 함께 했던 파리의 풍경이군! 직접 그려보고 싶어", "우산이 무지개색...이었나?"});      // 그림
         talkData.Add(205, new string[] { "군화가 걸려있네, 내 몸에 상처들과 상관이 있는 일일까?" });     // 군화
         talkData.Add(206, new string[] { "옥혜의 구두가 흙탕물에 아주 망가졌구먼 .." });                 // 구두
-        talkData.Add(207, new string[] { "편지: ..." });                        // 편지함
-        talkData.Add(208, new string[] { "비어있는 도화지가 있네.. 그림 실력을 좀 발휘해볼까?" });       // 캔버스
+        talkData.Add(207, new string[] { "옥혜의 '편지' ...? 추신.. 당신 곁에 있어주지 못해서 미안해... ", 
+                                        "..맞아 앨리는 우리가 파리에 함께 간 날 죽었어...", 
+                                        "나도 이제 앨리의 '흔적을 지우고' 이 곳을 떠날 때가 되었구나 .." });     // 편지함
+        talkData.Add(208, new string[] { "비어있는 도화지가 있네.. 그림 실력을 좀 발휘해볼까?" });               // 캔버스
         talkData.Add(209, new string[] { "결혼 기념일이 언제였지?" });       // 달력
     }
 

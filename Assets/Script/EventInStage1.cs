@@ -26,77 +26,73 @@ public class EventInStage1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Portal12")
+        switch (collision.gameObject.name)
         {
-            Debug.Log("portal");
-            Scene1.SetActive(false);
-            Scene2.SetActive(true);
-            player.PlayerReposition(new Vector2(-7.5f, -2.8f));
-        }
+            case "Portal12":
+                Debug.Log("portal");
+                Scene1.SetActive(false);
+                Scene2.SetActive(true);
+                player.PlayerReposition(new Vector2(-7.5f, -2.8f));
+                break;
 
-        if (collision.gameObject.name == "Portal21")
-        {
-            Debug.Log("portal");
-            Scene2.SetActive(false);
-            Scene1.SetActive(true);
-            player.PlayerReposition(new Vector2(7.3f, -3f));
-        }
+            case "Portal21":
+                Debug.Log("portal");
+                Scene2.SetActive(false);
+                Scene1.SetActive(true);
+                player.PlayerReposition(new Vector2(7.3f, -3f));
+                break;
 
-        if (collision.gameObject.name == "Portal321")
-        {
-            Debug.Log("portal");
-            Scene31.SetActive(false);
-            Scene2.SetActive(true);
-            player.PlayerReposition(new Vector2(-0.2f, -2.9f));
-        }
 
-        if (collision.gameObject.name == "Portal322")
-        {
-            Debug.Log("portal");
-            Scene32.SetActive(false);
-            Scene2.SetActive(true);
-            player.PlayerReposition(new Vector2(3.9f, 1.1f));
-        }
+            case "Portal321":
+                Debug.Log("portal");
+                Scene31.SetActive(false);
+                Scene2.SetActive(true);
+                player.PlayerReposition(new Vector2(-0.2f, -2.9f));
+                break;
 
-        if (collision.gameObject.name == "Portal323")
-        {
-            Debug.Log("portal");
-            Scene33.SetActive(false);
-            Scene2.SetActive(true);
-            player.PlayerReposition(new Vector2(-4.1f, 1.1f));
-        }
+            case "Portal322":
+                Debug.Log("portal");
+                Scene32.SetActive(false);
+                Scene2.SetActive(true);
+                player.PlayerReposition(new Vector2(3.9f, 1.1f));
+                break;
 
-        if (collision.gameObject.name == "Portal24")
-        {
-            Debug.Log("portal");
-            Scene2.SetActive(false);
-            Scene4.SetActive(true);
-            player.PlayerReposition(new Vector2(-2.7f, -2.7f));
-        }
+            case "Portal323":
+                Debug.Log("portal");
+                Scene33.SetActive(false);
+                Scene2.SetActive(true);
+                player.PlayerReposition(new Vector2(-4.1f, 1.1f));
+                break;
+        
 
-        if (collision.gameObject.name == "Portal42")
-        {
-            Debug.Log("portal");
-            Scene4.SetActive(false);
-            Scene2.SetActive(true);
-            player.PlayerReposition(new Vector2(-7.7f, 3.0f));
-        }
+            case "Portal24":
+                Debug.Log("portal");
+                Scene2.SetActive(false);
+                Scene4.SetActive(true);
+                player.PlayerReposition(new Vector2(-2.7f, -2.7f));
+                break;
 
-        if (collision.gameObject.name == "벌서는친구")
-        {
-            stopwatch.Reset();
-            //시간을 재서 어느정도 시간이 흐르면 다음 Exit함수 실행하게...
-            stopwatch.Start();
-        }
+            case "Portal42":
+                Debug.Log("portal");
+                Scene4.SetActive(false);
+                Scene2.SetActive(true);
+                player.PlayerReposition(new Vector2(-7.7f, 3.0f));
+                break;
 
-        if (collision.gameObject.name == "Finish")
-        {
-            if (PlayerMove.stuffName == "날개")
-            {
-                Debug.Log("Finish!");
-                Time.timeScale = 0;
-                FinishScreen.SetActive(true);
-            }
+            case "벌서는친구":
+                stopwatch.Reset();
+                //시간을 재서 어느정도 시간이 흐르면 다음 Exit함수 실행하게...
+                stopwatch.Start();
+                break;
+
+            case "Finish":
+                if (PlayerMove.stuffName == "날개")
+                {
+                    Debug.Log("Finish!");
+                    Time.timeScale = 0;
+                    FinishScreen.SetActive(true);
+                }
+                break;
         }
 
         if (collision.gameObject.name == "GameOver")
@@ -107,37 +103,101 @@ public class EventInStage1 : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "교실문 (1)" && Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            Debug.Log("교실문1");
-            Scene2.SetActive(false);
-            Scene31.SetActive(true);
-            player.PlayerReposition(new Vector2(-7.1f, -2.7f));
-        }
+            switch (collision.gameObject.name)
+            {
+                case "교실문 (1)":
+                
+                    Debug.Log("교실문1");
+                    Scene2.SetActive(false);
+                    Scene31.SetActive(true);
+                    player.PlayerReposition(new Vector2(-7.1f, -2.7f));
+                    break;
 
-        if (collision.gameObject.name == "교실문 (2)" && Input.GetKeyDown(KeyCode.W))
-        {
-            Debug.Log("교실문2");
-            Scene2.SetActive(false);
-            Scene32.SetActive(true);
-            player.PlayerReposition(new Vector2(-7.1f, -2.7f));
-        }
+                case "교실문 (2)":
+                
+                    Debug.Log("교실문2");
+                    Scene2.SetActive(false);
+                    Scene32.SetActive(true);
+                    player.PlayerReposition(new Vector2(-7.1f, -2.7f));
+                    break;
+                    
 
-        if (collision.gameObject.name == "교실문 (3)" && Input.GetKeyDown(KeyCode.W))
-        {
-            Debug.Log("교실문3");
-            Scene2.SetActive(false);
-            Scene33.SetActive(true);
-            player.PlayerReposition(new Vector2(-7.1f, -2.7f));
-        }
+                case "교실문 (3)":
+                
+                    Debug.Log("교실문3");
+                    Scene2.SetActive(false);
+                    Scene33.SetActive(true);
+                    player.PlayerReposition(new Vector2(-7.1f, -2.7f));
+                    break;
 
-        if (collision.gameObject.tag == "Trash" && Input.GetKeyDown(KeyCode.W))
-        {
-            Debug.Log("trash");
-            Destroy(collision.gameObject);
-            trashCount++;
-            if (trashCount == 3)
-                TrashCan.SetActive(true);
+                case "쓰레기":
+                
+                    Debug.Log("trash");
+                    Destroy(collision.gameObject);
+                    trashCount++;
+                    if (trashCount == 3)
+                        TrashCan.SetActive(true);
+                    break;
+
+                case "칠판":
+                
+                    if (PlayerMove.stuffName == "분필")
+                    {
+                        manager.Action(collision.gameObject);
+
+                        // 말풍선 떠있으면 Freeze
+                        if (manager.isActive)
+                            rigid.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+                        else
+                        {
+                            // 대화가 끝나고 아이템 얻기
+                            rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+                            Item newItem = itemManager.GetWordItem(collision.gameObject.GetComponent<ObjectData>().id);
+                            if (newItem != null)
+                            {
+                                Debug.Log("get newItem: " + newItem.itemName);
+                                rigid.GetComponent<Inventory>().AddItem(newItem);
+                            }
+
+                            collision.gameObject.SetActive(false);
+
+                        }
+                    }
+                    break;
+
+                case "철창":
+                    if (PlayerMove.stuffName == "열쇠")
+                        collision.gameObject.SetActive(false);
+                    break;
+
+                case "고양이":
+                
+                    if (manager.isActive)
+                    {
+                        manager.Action(collision.gameObject);
+                        if (!manager.isActive)
+                        {
+                            rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+                            Item newItem = itemManager.GetWordItem(collision.gameObject.GetComponent<ObjectData>().id);
+                            if (newItem != null)
+                            {
+                                Debug.Log("get newItem: " + newItem.itemName);
+                                rigid.GetComponent<Inventory>().AddItem(newItem);
+                            }
+                        }
+                    }
+                    else if (PlayerMove.stuffName == "간식")
+                    {
+                        manager.Action(collision.gameObject);
+
+                        rigid.constraints = RigidbodyConstraints2D.FreezePositionX |
+                                            RigidbodyConstraints2D.FreezePositionY |
+                                            RigidbodyConstraints2D.FreezeRotation;
+                    }
+                    break;
+            }
         }
 
         if (collision.gameObject.name == "벌서는친구")
@@ -153,14 +213,12 @@ public class EventInStage1 : MonoBehaviour
             if (stopwatch.ElapsedMilliseconds > 5000)
             {
                 stopwatch.Reset();
-                Debug.Log("10초 지남");
+                Debug.Log("5초 지남");
                 manager.Action(collision.gameObject);
 
                 rigid.constraints = RigidbodyConstraints2D.FreezePositionX |
                                     RigidbodyConstraints2D.FreezePositionY |
                                     RigidbodyConstraints2D.FreezeRotation;
-
-                Debug.Log("GetTalk함수 끝");
             }
 
             if (Input.GetKeyDown(KeyCode.W) && manager.isActive)
@@ -178,71 +236,12 @@ public class EventInStage1 : MonoBehaviour
                 }
             }
         }
-
-        if (collision.gameObject.name == "칠판" && Input.GetKeyDown(KeyCode.W))
-        {
-            if (PlayerMove.stuffName == "분필")
-            {
-                manager.Action(collision.gameObject);
-
-                // 말풍선 떠있으면 Freeze
-                if (manager.isActive)
-                    rigid.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-                else
-                {
-                    // 대화가 끝나고 아이템 얻기
-                    rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
-                    Item newItem = itemManager.GetWordItem(collision.gameObject.GetComponent<ObjectData>().id);
-                    if (newItem != null)
-                    {
-                        Debug.Log("get newItem: " + newItem.itemName);
-                        rigid.GetComponent<Inventory>().AddItem(newItem);
-                    }
-
-                    collision.gameObject.SetActive(false);
-
-                }
-            }
-        }
-
-        if (collision.gameObject.name == "철창" && Input.GetKeyDown(KeyCode.W))
-            if (PlayerMove.stuffName == "열쇠")
-                collision.gameObject.SetActive(false);
-
-
-        if (collision.gameObject.name == "고양이" && Input.GetKeyDown(KeyCode.W))
-        {
-            if (manager.isActive)
-            {
-                manager.Action(collision.gameObject);
-                if (!manager.isActive)
-                {
-                    rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
-                    Item newItem = itemManager.GetWordItem(collision.gameObject.GetComponent<ObjectData>().id);
-                    if (newItem != null)
-                    {
-                        Debug.Log("get newItem: " + newItem.itemName);
-                        rigid.GetComponent<Inventory>().AddItem(newItem);
-                    }
-                }
-            }
-
-            else if(PlayerMove.stuffName == "간식")
-            {
-                manager.Action(collision.gameObject);
-
-                rigid.constraints = RigidbodyConstraints2D.FreezePositionX |
-                                    RigidbodyConstraints2D.FreezePositionY |
-                                    RigidbodyConstraints2D.FreezeRotation;
-            }
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name == "벌서는친구")
-        {
             stopwatch.Reset();
-        }
+        
     }
 }

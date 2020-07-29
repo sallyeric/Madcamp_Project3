@@ -21,4 +21,9 @@ public class SceneChange : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("ThirdScene");
     }
+
+    public void GameQuit()
+    {
+        Application.Quit();
+    }
 }

@@ -165,6 +165,30 @@ public class EventInStage1 : MonoBehaviour
 
                         }
                     }
+                    else if (PlayerMove.stuffName == "필통")
+                    {
+                        manager.Action(150);
+
+                        // 말풍선 떠있으면 Freeze
+                        if (manager.isActive)
+                            rigid.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+                        else
+                        {
+                            rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+                        }
+                    }
+                    else if (PlayerMove.stuffName == "분식")
+                    {
+                        manager.Action(151);
+
+                        // 말풍선 떠있으면 Freeze
+                        if (manager.isActive)
+                            rigid.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+                        else
+                        {
+                            rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+                        }
+                    }
                     break;
 
                 case "철창":

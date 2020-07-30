@@ -23,13 +23,13 @@ public class ItemManager : MonoBehaviour
         itemData.Add(107, new Item(ItemType.Word, "날"));
 
         itemData.Add(201, new Item(ItemType.Word, "장"));    // 장미
-        itemData.Add(203, new Item(ItemType.Word, "가"));    // 전화시
+        itemData.Add(203, new Item(ItemType.Word, "위"));    // 전화시
         itemData.Add(204, new Item(ItemType.Word, "편"));    // 그림
         itemData.Add(205, new Item(ItemType.Word, "감"));    // 군화
         itemData.Add(206, new Item(ItemType.Word, "병"));    // 구두
-        itemData.Add(207, new Item(ItemType.Word, "지"));    // 편지함
-        itemData.Add(208, new Item(ItemType.Word, "위"));    // 캔버스
-        itemData.Add(209, new Item(ItemType.Word, "우"));    // 달력
+        itemData.Add(207, new Item(ItemType.Word, "지"));    // 편지함//
+        itemData.Add(208, new Item(ItemType.Word, "가"));    // 캔버스//
+        itemData.Add(209, new Item(ItemType.Word, "우"));    // 달력//
     }
 
     public Item GetWordItem(int id)

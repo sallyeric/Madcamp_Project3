@@ -4136,6 +4136,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4077798384040488188, guid: d6e9539428b02fd478e1d0e54d0a90bd,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1df4f6e3b7d7078418f27d11f7d0a0c1,
+        type: 2}
+    - target: {fileID: 4077798384040488188, guid: d6e9539428b02fd478e1d0e54d0a90bd,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7705480268822088294, guid: d6e9539428b02fd478e1d0e54d0a90bd,
         type: 3}
       propertyPath: m_LocalPosition.x

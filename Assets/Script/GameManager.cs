@@ -50,6 +50,14 @@ public class GameManager : MonoBehaviour
         ChatBox.SetActive(isActive);
     }
 
+    public void Action(int id)
+    {
+        Debug.Log(TAG + "Action2");
+        OnTalk(id);
+
+        ChatBox.SetActive(isActive);
+    }
+
     void OnTalk(int id)
     {
 

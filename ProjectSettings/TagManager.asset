@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - FieldItem
+  - ChatBox
+  - GameOver
+  - Trash
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Platform
+  - Object
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 536371539
+    locked: 0
+  - name: Platform
+    uniqueID: 2622935785
+    locked: 0
+  - name: Stuff
+    uniqueID: 3365471593
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Item
+    uniqueID: 743702343
+    locked: 0
+  - name: Foreground
+    uniqueID: 656559103
+    locked: 0
+  - name: Player
+    uniqueID: 3066295279
+    locked: 0
